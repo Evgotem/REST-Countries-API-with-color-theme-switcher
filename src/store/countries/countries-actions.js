@@ -16,13 +16,10 @@ export const setError = (error) => ({
   payload: error,
 });
 
-export const loadCountries =
-  () =>
-  (dispatch, _, { client, api }) => {
+export const loadCountries = () => (dispatch, _, { client, api }) => {
     dispatch(setLoading());
-
     client
       .get(api.ALL_COUNTRIES)
       .then(({ data }) => dispatch(setCountries(data)))
-      .catch((error) => dispatch(error));
+      .catch((error) => dispatch(error.message));
   };

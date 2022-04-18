@@ -1,7 +1,7 @@
 import { SET_COUNTRIES, SET_ERROR, SET_LOADING } from "./countries-actions"
 
 const initialState = {
-  status: 'idle', //loading || received || rejected
+  status: 'idle', // loading | received | rejected
   error: null,
   list: [],
 }
