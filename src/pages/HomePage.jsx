@@ -5,9 +5,9 @@ import { List } from '../components/List';
 import { Card } from '../components/Card';
 import { Controls } from '../components/Controls';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllCountries, selectCountriesInfo, selectVisibleCountries } from '../store/countries/countries-selector';
+import { selectCountriesInfo, selectVisibleCountries } from '../store/countries/countries-selector';
 import { loadCountries } from '../store/countries/countries-actions';
-import { selectControls, selectSearch } from '../store/controls/controls-selector';
+import { selectControls } from '../store/controls/controls-selector';
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export const HomePage = () => {
       <Controls />
 
       {error && <h2>Can't fetch data</h2>}
-      {status === 'loading' && <div style={{marginTop: '15px'}}><img src="img/loader.gif" alt='...loading' /></div>}
+      {status === 'loading' && <h2>...loading</h2>}
 
       {status === 'received' && (
         <List>
