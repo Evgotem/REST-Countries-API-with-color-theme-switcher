@@ -32,7 +32,10 @@ export const HomePage = () => {
 
       {status === 'received' && (
         <List>
-          {countries.map((c) => {
+
+          {countries.length === 0 ?
+          <h2>Countries not found</h2>
+          : countries.map((c) => {
             const countryInfo = {
               img: c.flags.png,
               name: c.name,
